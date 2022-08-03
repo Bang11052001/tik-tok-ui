@@ -9,11 +9,12 @@
     padding: 6px 8px;
     user-select: none;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.6rem;
     min-width: 100px;
     background-color: #fff;
     color: #161823;
+    font-family: 'ProximaNova', sans-serif;
 
     &.disabled {
         pointer-events: none;

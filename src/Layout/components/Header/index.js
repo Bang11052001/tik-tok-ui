@@ -1,5 +1,4 @@
 import {
-    faMagnifyingGlass,
     faCircleXmark,
     faEllipsisVertical,
     faEarthAsia,
@@ -12,7 +11,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import 'tippy.js/dist/tippy.css';
 
-import { faPaperPlane, faMessage } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
@@ -24,10 +22,13 @@ import { PopperWrapper } from '~/Layout/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/Layout/Popper/Menu';
+import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
+
 let cx = classNames.bind(styles);
 
 function Header() {
-    const user = false;
+    const user = true;
     const optionMenu = [
         {
             icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -87,7 +88,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
-                <img className="logo" src={logo.logo} alt="tiktok" />
+                <img className="logo" src={logo} alt="tiktok" />
                 <div>
                     <HeadlessTippy
                         interactive
@@ -112,10 +113,7 @@ function Header() {
                             <FontAwesomeIcon className={cx('search-clear-btn')} icon={faCircleXmark} />
                             {/* <FontAwesomeIcon className={cx('search-loading-btn')} icon={faSpinner} /> */}
                             <button className={cx('search-btn')}>
-                                <FontAwesomeIcon
-                                    className={cx('search-btn-icon')}
-                                    icon={faMagnifyingGlass}
-                                ></FontAwesomeIcon>
+                                <SearchIcon className={cx('search-btn-icon')} />
                             </button>
                         </div>
                     </HeadlessTippy>
@@ -126,23 +124,24 @@ function Header() {
                     </Button>
                     {user ? (
                         <>
-                            <Tippy content="Upload video" placement="bottom">
+                            <Tippy content="Messages" placement="bottom">
                                 <button className={cx('option-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
 
-                            <Tippy content="Upload video" placement="bottom">
+                            <Tippy content="Inbox" placement="bottom">
                                 <button className={cx('option-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
 
                             <Menu menuItems={userMenu}>
-                                <img
+                                <Image
                                     alt="avatar"
                                     className={cx('option-avatar')}
                                     src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7127610606139473926~c5_720x720.jpeg?x-expires=1659697200&x-signature=rnXpXNDy7J056e7oUd6FArdn%2BBI%3D"
+                                    fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                                 />
                             </Menu>
                         </>

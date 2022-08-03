@@ -1,5 +1,5 @@
-const logo = {
-    logo: require('~/assets/images/logo.svg').default,
-};
+const logo = require('~/assets/images/logo.svg').default;
 
-export { logo };
+const noAvatar = require('./no-avatar.png');
+
+export { logo, noAvatar };

@@ -35,6 +35,7 @@ function Menu({ menuItems, children }) {
     return (
         <HeadlessTippy
             interactive
+            visible
             delay={[0, 700]}
             offset={[12, 8]}
             placement="bottom-end"
