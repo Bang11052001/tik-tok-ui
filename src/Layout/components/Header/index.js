@@ -24,6 +24,21 @@ function Header() {
         {
             icon: <FontAwesomeIcon icon={faEarthAsia} />,
             title: 'English',
+            children: {
+                title: 'language',
+                data: [
+                    {
+                        type: 'language',
+                        code: 'en',
+                        title: 'English',
+                    },
+                    {
+                        type: 'language',
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                ],
+            },
         },
         {
             icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -43,7 +58,6 @@ function Header() {
                 <div>
                     <Tippy
                         interactive
-                        visible
                         render={(attrs) => (
                             <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                                 <PopperWrapper>
@@ -84,7 +98,7 @@ function Header() {
                         placement="bottom-end"
                         render={(attrs) => (
                             <div className={cx('')} tabIndex="-1" {...attrs}>
-                                <Menu data={MENU_ITEMS}></Menu>
+                                <Menu menuItems={MENU_ITEMS}></Menu>
                             </div>
                         )}
                     >
