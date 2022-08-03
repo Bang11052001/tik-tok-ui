@@ -109,5 +109,26 @@
     .menu-icon {
         margin-left: 16px;
         padding: 0 4px;
+        cursor: pointer;
+    }
+
+    .option-avatar {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 12px;
+        cursor: pointer;
+    }
+
+    .option-btn {
+        font-size: 2.2rem;
+        color: #161823;
+        background-color: transparent;
+        padding: 4px 0 0;
+        margin: 12px 14px;
+        cursor: pointer;
+        outline: none;
+        border: none;
     }
 }
