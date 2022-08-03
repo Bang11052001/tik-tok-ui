@@ -1,29 +1,26 @@
 import {
-    faCircleXmark,
-    faEllipsisVertical,
-    faEarthAsia,
     faCircleQuestion,
-    faKeyboard,
-    faUser,
     faCoins,
+    faEarthAsia,
+    faEllipsisVertical,
     faGear,
+    faKeyboard,
     faSignOut,
+    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import 'tippy.js/dist/tippy.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
-import HeadlessTippy from '@tippyjs/react/headless';
+import classNames from 'classnames/bind';
 
 import { logo } from '~/assets/images/index';
-import styles from './Header.module.scss';
-import { PopperWrapper } from '~/Layout/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
-import Menu from '~/Layout/Popper/Menu';
-import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
+import { InboxIcon, MessageIcon } from '~/components/Icons';
 import Image from '~/components/Image';
+import Menu from '~/Layout/Popper/Menu';
+import Search from '../Search';
+import styles from './Header.module.scss';
 
 let cx = classNames.bind(styles);
 
@@ -89,35 +86,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
                 <img className="logo" src={logo} alt="tiktok" />
-                <div>
-                    <HeadlessTippy
-                        interactive
-                        render={(attrs) => (
-                            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                                <PopperWrapper>
-                                    <h4 className={cx('search-title')}>Accounts</h4>
-                                    <AccountItem />
-                                    <AccountItem />
-                                    <AccountItem />
-                                    <AccountItem />
-                                </PopperWrapper>
-                            </div>
-                        )}
-                    >
-                        <div className={cx('search')}>
-                            <input
-                                className={cx('search-input')}
-                                type="text"
-                                placeholder="Search accounts and videos"
-                            ></input>
-                            <FontAwesomeIcon className={cx('search-clear-btn')} icon={faCircleXmark} />
-                            {/* <FontAwesomeIcon className={cx('search-loading-btn')} icon={faSpinner} /> */}
-                            <button className={cx('search-btn')}>
-                                <SearchIcon className={cx('search-btn-icon')} />
-                            </button>
-                        </div>
-                    </HeadlessTippy>
-                </div>
+                <Search />
                 <div className={cx('option')}>
                     <Button outline outlineDark>
                         Upload
