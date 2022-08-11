@@ -3,12 +3,14 @@ import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios';
 
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import { PopperWrapper } from '~/Layout/Popper';
 import styles from './Search.module.scss';
 import { useDebouce } from '~/hooks';
+import { searchServices } from '~/services';
 
 let cx = classNames.bind(styles);
 
@@ -41,17 +43,15 @@ function Search() {
             return;
         }
 
-        setLoading(true);
+        const fetchApi = async () => {
+            const data = await searchServices(deBounceValue);
+            setSearchResult(data);
+            setLoading(false);
+        };
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
-            .then((response) => response.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+        fetchApi();
+
+        setLoading(true);
     }, [deBounceValue]);
 
     return (
