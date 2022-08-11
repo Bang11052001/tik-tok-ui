@@ -8,6 +8,7 @@ import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import { PopperWrapper } from '~/Layout/Popper';
 import styles from './Search.module.scss';
+import { useDebouce } from '~/hooks';
 
 let cx = classNames.bind(styles);
 
@@ -17,6 +18,8 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [loading, setLoading] = useState(false);
     const inputRef = useRef();
+
+    const deBounceValue = useDebouce(searchValue, 500);
 
     const handleChange = (value) => {
         setSearchValue(value);
@@ -33,7 +36,7 @@ function Search() {
     };
 
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!deBounceValue.trim()) {
             setSearchResult([]);
             return;
         }
@@ -49,7 +52,7 @@ function Search() {
             .catch(() => {
                 setLoading(false);
             });
-    }, [searchValue]);
+    }, [deBounceValue]);
 
     return (
         <HeadlessTippy
