@@ -32,6 +32,9 @@
 
 .menu-list {
     padding-top: 8px;
+    max-height: 590px;
+    overflow-y: auto;
+    overflow: hidden;
 
     .menu-item {
         margin: 0;

@@ -86,7 +86,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
-                <Link to={config.routes.home}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img className="logo" src={logo} alt="tiktok" />
                 </Link>
                 <Search />
@@ -112,7 +112,7 @@ function Header() {
                                 <Image
                                     alt="avatar"
                                     className={cx('option-avatar')}
-                                    src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7127610606139473926~c5_720x720.jpeg?x-expires=1659697200&x-signature=rnXpXNDy7J056e7oUd6FArdn%2BBI%3D"
+                                    src=""
                                     fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                                 />
                             </Menu>
