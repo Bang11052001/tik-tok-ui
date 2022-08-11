@@ -9,10 +9,10 @@ import {
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import 'tippy.js/dist/tippy.css';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import { logo } from '~/assets/images/index';
 import Button from '~/components/Button';
@@ -21,11 +21,12 @@ import Image from '~/components/Image';
 import Menu from '~/Layout/Popper/Menu';
 import Search from '../Search';
 import styles from './Header.module.scss';
+import config from '~/config';
 
 let cx = classNames.bind(styles);
 
 function Header() {
-    const user = false;
+    const user = true;
     const optionMenu = [
         {
             icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -85,7 +86,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
-                <img className="logo" src={logo} alt="tiktok" />
+                <Link to={config.routes.home}>
+                    <img className="logo" src={logo} alt="tiktok" />
+                </Link>
                 <Search />
                 <div className={cx('option')}>
                     <Button outline outlineDark>

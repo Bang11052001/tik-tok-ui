@@ -24,6 +24,10 @@ function Search() {
     const deBounceValue = useDebouce(searchValue, 500);
 
     const handleChange = (value) => {
+        if (value.startsWith(' ')) {
+            return;
+        }
+
         setSearchValue(value);
     };
 
@@ -83,7 +87,7 @@ function Search() {
                     <FontAwesomeIcon className={cx('search-clear-btn')} icon={faCircleXmark} onClick={handleClear} />
                 )}
                 {loading && <FontAwesomeIcon className={cx('search-loading-btn')} icon={faSpinner} />}
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <SearchIcon
                         fill={searchValue.length > 0 ? 'rgba(22, 24, 35, 0.75)' : 'rgba(22, 24, 35, 0.34)'}
                         className={cx('search-btn-icon')}

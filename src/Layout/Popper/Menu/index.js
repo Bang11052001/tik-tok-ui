@@ -9,7 +9,7 @@ import Header from './Header';
 
 const cx = classNames.bind(styles);
 
-function Menu({ menuItems, children }) {
+function Menu({ menuItems, children, hideOnClick = false }) {
     const [menu, setMenu] = useState([{ data: [...menuItems] }]);
     const current = menu[menu.length - 1];
 
@@ -34,6 +34,7 @@ function Menu({ menuItems, children }) {
 
     return (
         <HeadlessTippy
+            hideOnClick={hideOnClick}
             interactive
             delay={[0, 700]}
             offset={[12, 8]}
