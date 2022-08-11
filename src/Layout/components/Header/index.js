@@ -25,7 +25,7 @@ import styles from './Header.module.scss';
 let cx = classNames.bind(styles);
 
 function Header() {
-    const user = true;
+    const user = false;
     const optionMenu = [
         {
             icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -117,7 +117,6 @@ function Header() {
                     ) : (
                         <>
                             <Button primary>Sign in</Button>
-
                             <Menu menuItems={optionMenu}>
                                 <div className={cx('menu-icon')}>
                                     <FontAwesomeIcon icon={faEllipsisVertical} />
