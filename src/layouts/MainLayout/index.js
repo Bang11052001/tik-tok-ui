@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
 
 import Sidebar from './Sidebar';
-import Header from '~/Layout/components/Header';
-import styles from './DefaultLayout.module.scss';
+import Header from '~/layouts/components/Header';
+import styles from './MainLayout.module.scss';
 
 let cx = classNames.bind(styles);
 
-function DefaultLayout({ children }) {
+function MainLayout({ children }) {
     return (
         <>
             <Header />
@@ -18,4 +18,4 @@ function DefaultLayout({ children }) {
     );
 }
 
-export default DefaultLayout;
+export default MainLayout;

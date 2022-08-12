@@ -18,7 +18,7 @@ import { logo } from '~/assets/images/index';
 import Button from '~/components/Button';
 import { InboxIcon, MessageIcon } from '~/components/Icons';
 import Image from '~/components/Image';
-import Menu from '~/Layout/Popper/Menu';
+import Menu from '~/layouts/Popper/Menu';
 import Search from '../Search';
 import styles from './Header.module.scss';
 import config from '~/config';

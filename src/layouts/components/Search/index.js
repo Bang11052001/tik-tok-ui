@@ -3,11 +3,12 @@ import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// eslint-disable-next-line no-unused-vars
 import axios from 'axios';
 
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
-import { PopperWrapper } from '~/Layout/Popper';
+import { PopperWrapper } from '~/layouts/Popper';
 import styles from './Search.module.scss';
 import { useDebouce } from '~/hooks';
 import { searchServices } from '~/services';
