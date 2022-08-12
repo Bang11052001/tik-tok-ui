@@ -1,8 +1,9 @@
-import styles from './Menu.module.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
+
+import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -17,4 +18,8 @@ function Header({ item, onBack }) {
     );
 }
 
+Header.propTypes = {
+    item: PropTypes.object,
+    onBack: PropTypes.func,
+};
 export default Header;
