@@ -15,5 +15,3 @@ HeaderOnly.propTypes = {
 };
 
 export default HeaderOnly;
-
-ádfasdfasda;

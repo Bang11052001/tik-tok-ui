@@ -11,7 +11,3 @@ const publicRoute = [
 const privateRoute = [];
 
 export { privateRoute, publicRoute };
-
-ádfasdf;
-ádfasdf;
-ádfasdfsa;

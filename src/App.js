@@ -38,9 +38,3 @@ function App() {
 }
 
 export default App;
-
-ádfsadfsa;
-
-ádfsdafsda;
-
-ádfsadfsadf;
